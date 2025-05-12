@@ -1,0 +1,58 @@
+
+[
+    {
+        "key": "lesson_1",
+        "title": "Lesson 1",
+        "content": [
+            {
+                "type": "text",
+                "text": "This is the first lesson of the course."
+            },
+            {
+                "type": "keypoints",
+                "data": [
+                    {
+                        "label": "Bias",
+                        "description": "This is the first key point of the lesson.",
+                        "url": "https://developers.google.com/machine-learning/glossary#bias-math-or-bias-term"
+                    },
+                    {
+                        "label": "Feature",
+                        "description": "An input variable to a machine learning model.",
+                        "url": "https://developers.google.com/machine-learning/glossary#feature"
+                    },
+                    {
+                        "label": "Label",
+                        "description": "In supervised machine learning, the 'answer' or 'result' portion of an example.",
+                        "url": "https://developers.google.com/machine-learning/glossary#label"
+                    },
+                    {
+                        "label": "Linear regression",
+                        "description": "A type of machine learning model in which both of the following are true: The model is a linear model. The prediction is a floating-point value. (This is the regression part of linear regression.)",
+                        "url": "https://developers.google.com/machine-learning/glossary#linear-regression"
+                    },
+                    {
+                        "label": "Parameter",
+                        "description": "The weights and biases that a model learns during training.",
+                        "url": "https://developers.google.com/machine-learning/glossary#parameter"
+                    },
+                    {
+                        "label": "Weight",
+                        "description": "A value that a model multiplies by another value. Training is the process of determining a model's ideal weights; inference is the process of using those learned weights to make predictions.",
+                        "url": "https://developers.google.com/machine-learning/glossary#weight"
+                    }
+                ]
+            },
+            {
+                "type": "image",
+                "src": "/images/lesson_1/image1.jpg"
+            },
+            {
+                "type": "video",
+                "src": "/videos/lesson_1/video1.mp4"
+            }
+        ]
+
+    }
+
+    ]

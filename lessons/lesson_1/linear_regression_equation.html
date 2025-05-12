@@ -2,6 +2,8 @@
 <html>
     <header>
         <link rel="stylesheet" href="../../styles/style.css">
+        <script src='../../js/fetcher.js'></script>
+        
 
     </header>
     <body>
@@ -96,6 +98,21 @@
             
             
         </section>
+
+        <section>
+            <h2>
+                Key Concepts:
+            </h2>
+            <ul id="key-concepts-list">
+                <li>Bias</li>
+                <li>Feature</li>
+                <li>Label</li>
+                <li>Linear regression</li>
+                <li>Parameter</li>
+                <li>Weight</li>
+            </ul>
+
+        </section>
         
     </body>
     <footer>
@@ -104,5 +121,12 @@
         target="_blank">
              ML Crash Course
         </a>
+        <script src='../../js/data_helper.js'>
+            
+        </script>
+        <script>
+            buildData('/lessons/lesson_1/special_content/content.json', 'lesson_1', 'key-concepts-list', 'keypoints');
+            
+        </script>
     </footer>
 </html>
