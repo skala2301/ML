@@ -4,7 +4,8 @@ const tbody = tableWeightMPG.querySelector('tbody');
 const thead = tableWeightMPG.querySelector('thead');
 
 const init = async () => {
-    const data = await fetchData('./js/data.json');
+    
+    const data = await fetchData(`/js/data.json`);
     const headRow = document.createElement('tr');
     const th0 = document.createElement('th');
     const th1 = document.createElement('th');

@@ -7,7 +7,7 @@ var global_data = null;
 btnJsonTest.addEventListener('click', async () => {
     //console.log("DATA J:",data);
     try {
-        global_data = await fetchData('./js/data.json');//await response.json();
+        global_data = await fetchData('/js/data.json');//await response.json();
         console.log("Data fetched: ",global_data);
         plot2D(global_data);
         
@@ -35,35 +35,61 @@ function plot2D(data) {
 
     data.sort(
         (p1, p2) => (p1[x_key] < p2[x_key]) ? -1 : (p1[x_key] > p2[x_key]) ? 1 : 0);
-    const padding = 20;
+    const padding_x = 40;
+    const padding_y = 20;
+    const x_divisions = 10;
+    const y_divisions = 10;
     const total_range_x = data[data_count - 1][x_key] - data[0][x_key];
     const total_range_y = data[data_count - 1][y_key] - data[0][y_key];
-    const ratio_x = (linCanvas.width - (padding * 2)) / total_range_x;
-    const ratio_y = (linCanvas.height - (padding * 2)) / total_range_y;
+    const ratio_x = (linCanvas.width - (padding_x * 2)) / total_range_x;
+    const ratio_y = (linCanvas.height - (padding_y * 2)) / total_range_y;
+    const x_step = total_range_x / x_divisions;
+    const y_step = total_range_y / y_divisions;
+    const x_labels = [];
+    const y_labels = [];
+    for(let i = 0; i <= x_divisions; i++) {
+        ctx.beginPath();
+        ctx.moveTo(padding_x + (i * x_step * ratio_x), padding_y);
+        ctx.lineTo(padding_x + (i * x_step * ratio_x), linCanvas.height - padding_y);
+        ctx.stroke();
+        ctx.strokeStyle = "green";
+        ctx.fillStyle = "green";
+        ctx.fillText((data[0][x_key] + (i * x_step)).toFixed(2), padding_x + (i * x_step * ratio_x), linCanvas.height - padding_y + 15);
+    }
+    for(let i = 0; i <= y_divisions; i++) {
+        ctx.beginPath();
+        ctx.moveTo(padding_x, padding_y + (i * y_step * ratio_y));
+        ctx.lineTo(linCanvas.width - padding_x, padding_y + (i * y_step * ratio_y));
+        ctx.stroke();
+        ctx.strokeStyle = "green";
+        ctx.fillStyle = "green";
+        ctx.fillText((data[0][y_key] + (i * y_step)).toFixed(2), padding_x - 30, padding_y + (i * y_step * ratio_y));
+    }
+    
 
-    console.log(`${data[data_count - 1][x_key]} -  ${data[0][x_key]} : ${total_range_x}`);
+    
     data.forEach((item, index) => {
         const x = item[x_key];
         const y = item[y_key];
-        const x_pos = padding + (x - data[0][x_key]) * ratio_x;
-        const y_pos = (padding + ((y - data[0][y_key]) * ratio_y));
+        const x_pos = padding_x + (x - data[0][x_key]) * ratio_x;
+        const y_pos = (padding_y + ((y - data[0][y_key]) * ratio_y));
         
         ctx.fillStyle = "red";
         ctx.fillRect(x_pos, y_pos, 5, 5);
+        ctx.strokeStyle = "black";
         
         if(index < data_count - 1) {
-            const next_x_pos =  padding + (data[index + 1][x_key] - data[0][x_key]) * ratio_x;
-            const next_y_pos = (padding + ((data[index + 1][y_key] - data[0][y_key]) * ratio_y));
+            const next_x_pos =  padding_x + (data[index + 1][x_key] - data[0][x_key]) * ratio_x;
+            const next_y_pos = (padding_y + ((data[index + 1][y_key] - data[0][y_key]) * ratio_y));
             ctx.beginPath();
             ctx.moveTo(x_pos, y_pos);
             ctx.lineTo(next_x_pos, next_y_pos);
             ctx.stroke();
+            
         }
         
     });
     
-    //ctx.moveTo()
-    //ctx.fillRect(20, 20, 150, 100);
 };
 
 window.addEventListener('resize', () => {

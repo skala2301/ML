@@ -1,0 +1,11 @@
+.container-two-columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.container-two-columns .column-1 {
+    width: 50%;
+  }
+  .container-two-columns .column-2 {
+    width: 50%;
+  }

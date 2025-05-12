@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <link rel="stylesheet" href="../../styles/style.css">
+
+    </header>
+    <body>
+        <section class="section-info">
+            <h1>Linear regression equation</h1>
+            <div class="container-two-columns">
+                <div class="column-1">
+                    <p>
+                        In algebraic terms, the model would be defined as: 
+                        
+                    </p>
+                    <br/>
+                    <div>
+                        <math display="block">
+                            <mn>y</mn>
+                            <mo>=</mo>
+                            <mn>mx</mn>
+                            <mo>+</mo>
+                            <mn>b</mn>
+                        </math>
+                    </div>
+                </div>
+                <div class="column-2">
+                    <p>
+                        Where:
+                    </p>
+                    <ul>
+                        <li><b>y</b> is miles per gallon—the value we want to predict.</li>
+                        <li><b>m</b> is the slope of the line.</li>
+                        <li><b>x</b> is pounds—our input value.</li>
+                        <li><b>b</b> is the y-intercept of the line.</li>
+                    </ul>
+                    
+                </div>
+
+            </div>
+            <div class="container-two-columns">
+                <div class="column-1">
+                    <p>
+                        In ML, we write the equation for a linear regression model as follows:
+                    </p>
+                    <div>
+                        <math display="block">
+                            
+                            <mi>y'</mi>
+                            <mo>=</mo>
+                            <mn>b</mn>
+                            <mo>+</mo>
+                            <msub>
+                                <mi>w</mi>
+                                <mn>1</mn>
+                            </msub>
+                            <msub>
+                                <mi>x</mi>
+                                <mn>1</mn>
+                            </msub>
+                            
+                        </math>
+                    </div>
+                </div>
+                <div class="column-2">
+                    <p>
+                        Where:
+                    </p>
+                    <ul>
+                        <li><b>y'</b> is the predicted label—the output.</li>
+                        <li><b>b</b> Bias is a parameter of the model and is calculated during training.</li>
+                        <li><b>
+                            <math>
+                                <msub>
+                                    <mi>w</mi>
+                                    <mn>1</mn>
+                                </msub>
+
+                            </math>
+                        </b> Weight is a parameter of the model and is calculated during training.</li>
+                        <li>
+                            <b>
+                            <math>
+                                <msub>
+                                    <mi>x</mi>
+                                    <mn>1</mn>
+                                </msub>
+
+                            </math>
+                            </b> is a feature—the input.
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            
+        </section>
+        
+    </body>
+    <footer>
+        The content for this lesson has been taken from: <a 
+        href="https://developers.google.com/machine-learning/crash-course/linear-regression"
+        target="_blank">
+             ML Crash Course
+        </a>
+    </footer>
+</html>
